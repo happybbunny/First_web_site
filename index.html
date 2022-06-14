@@ -137,15 +137,25 @@
                 width:100%;
                 height:200px;
             }
+        }
+        .youtube{
+            display:flex;
+            flex-direction: row;
+            align-items:center;
+            justify-content: center;
 
-}
+            margin:40px 0px 100px 0px;
+        }
+
     </style>
 </head>
 <body>
+
     <div class="mytitle">
         <h1>내 추억거리를 공유합니다</h1>
         <a class="btn" href="http://blog.naver.com/caomeiyun" target="_blank">블로그 바로가기 ></a>
     </div>
+
     <div class="box">
         <div class="map" id="map"></div>
         <div class="story">
@@ -159,6 +169,31 @@
             </p>
         </div>
     </div>
+
+    <div class="youtube">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/LVLHprUg-PM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div id="disqus_thread"></div>
+    <script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://web-1-b1pmrrk5rm.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
     <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=535068688f1a8bca1c21a9445ede0a89"></script>
     <script>
         var markerPosition = new kakao.maps.LatLng(37.4815685, 126.823956)
@@ -181,5 +216,19 @@
         });
 
     </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/62a8f25e7b967b1179948ed3/1g5hv5gnn';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 </html>
