@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습용사이트</title>
+
+    <meta property="og:title" content="[prac]호둥이의 추억사진"/>
+    <meta property="og:description" content="내가 만든 첫번째 웹페이지!"/>
+    <meta property="og:image" content="Hodu_image4.jpg"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            font-family: 'Gowun Batang', serif;
+        }
+
+        .mytitle{
+            display:flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: center;
+
+            margin-top: 30px;
+        }
+
+        .btn{
+            width: 300px;
+            height: 40px;
+
+            border:2px solid #e8344e;
+
+            text-decoration: none;
+            text-align:center;
+
+            line-height:40px;
+
+            color:#e8344e;
+            font-weight: bold;
+
+            border-radius:40px;
+            
+        }
+
+        .btn:hover{
+            background-color: #e8344e;
+            color:white;
+
+        }
+
+        .box{
+            width: 1000px;
+
+            display:flex;
+            flex-direction: row;
+            align-items:center;
+            justify-content: center;
+
+            margin-top: 40px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 0;
+
+            margin: 40px auto 0px auto;
+        }
+
+        .map{
+            width:500px;
+            height:500px;
+
+            margin-right: 30px;
+
+            border-radius: 24px;
+        }
+
+        .story{
+            width:450px;
+            height:500px;
+        }
+
+        .image{
+            width:450px;
+            height:300px;
+
+            background-image: url('Hodu_image4.jpg');
+            background-position:center;
+            background-size:cover;
+
+            border-radius: 24px;
+        }
+
+        .story>h2{
+            margin:20px 0px 0px 0px;
+            color: #e8344e;
+        }
+        
+        .story>h3{
+            margin:5px 0px 0px 0px;
+            color:grey;
+            font-size:16px;
+
+            font-weight:normal;
+        }
+
+        .story>p{
+            line-height:24px;
+        }
+
+        @media screen and (max-width: 640px) {
+            h1{
+                font-size:26px;
+            }
+
+            .box{
+                flex-direction:column;
+                width:100%;
+            }
+
+            .map{
+                width:100%;
+                height:200px;
+
+                margin:0
+            }
+            .story{
+                width:100%;
+                height:auto;
+                
+                margin-top:10px;
+                margin-bottom: 10px;
+            }
+            .image{
+                width:100%;
+                height:200px;
+            }
+
+}
+    </style>
+</head>
+<body>
+    <div class="mytitle">
+        <h1>내 추억거리를 공유합니다</h1>
+        <a class="btn" href="http://blog.naver.com/caomeiyun" target="_blank">블로그 바로가기 ></a>
+    </div>
+    <div class="box">
+        <div class="map" id="map"></div>
+        <div class="story">
+            <div class="image"></div>
+            <h2>푸른수목원</h2>
+            <h3>서울 구로구 서해안로 2117</h3>
+            <p> 
+                새집 집들이 겸 다같이 푸른수목원에 놀러갔다. 히히
+                날씨도 맑고 노을도 예쁘고 하늘도 나무도 숲도 다 좋았다.
+                호두도 신나서 여기저기 뛰어놀았다. 너무 즐거웠던 하루!
+            </p>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=535068688f1a8bca1c21a9445ede0a89"></script>
+    <script>
+        var markerPosition = new kakao.maps.LatLng(37.4815685, 126.823956)
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+            mapOption = { 
+                center: markerPosition, // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+        var imageSrc = "https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/2021_05_free_parents/sparta-marker.png"; 
+        var imageSize = new kakao.maps.Size(65, 86); 
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+        
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: markerPosition,
+            image : markerImage
+        });
+
+    </script>
+</body>
+</html>
